@@ -1,0 +1,30 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+nb-configuration.xml
+nbactions.xml
+
+# Eclipse (por si alguien lo usa)
+.classpath
+.project
+.settings/
+
+# Datos generados al ejecutar el programa (JSON y respaldos)
+data/
+
+# Sistema operativo y registros
+.DS_Store
+Thumbs.db
+*.log
