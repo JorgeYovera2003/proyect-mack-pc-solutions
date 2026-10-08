@@ -2,7 +2,7 @@
 
 Proyecto académico de **Diseño de Patrones**. Aplicación de escritorio en **Java 17** con interfaz **Swing**
 y persistencia en archivos **JSON** (sin base de datos). Gestiona ventas, cotizaciones, inventario y
-servicios técnicos de un negocio de tecnología (escenario propuesto con fines académicos).
+servicios técnicos de un negocio de tecnología.
 
 ## Estado del proyecto
 
@@ -23,19 +23,12 @@ servicios técnicos de un negocio de tecnología (escenario propuesto con fines 
 ## Cómo abrir el proyecto
 
 **IntelliJ IDEA:** `File > Open…` → elegir el archivo `pom.xml` → "Open as Project". Esperar a que
-descargue las dependencias (Gson y JUnit). Abrir `src/main/java/com/mack/Main.java` y ejecutar `main`.
+descargue las dependencias. Abrir `src/main/java/com/mack/Main.java` y ejecutar `main`.
 
 **NetBeans:** `File > Open Project…` → elegir la carpeta del proyecto (NetBeans la reconoce como proyecto Maven).
 Clic derecho sobre el proyecto → `Run`.
 
-**Desde la terminal** (con Maven instalado):
-
-```
-mvn test               # ejecuta las pruebas unitarias
-mvn compile exec:java  # ejecuta la aplicación
-```
-
-## Usuarios de ejemplo (se crean en la primera ejecución)
+## Usuarios de ejemplo (se crean en la primera ejecución para el ejmplo)
 
 | Usuario | Contraseña | Rol |
 |---|---|---|
@@ -43,7 +36,7 @@ mvn compile exec:java  # ejecuta la aplicación
 | tecnico | tecnico123 | Técnico (órdenes y garantías) |
 | vendedor | vendedor123 | Vendedor (clientes, catálogo, armado, cotizaciones) |
 
-Los datos se guardan en la carpeta `data/` (se crea sola y no se sube a Git). Cada archivo mantiene una copia
+Los datos se guardan en la carpeta `data/`. Cada archivo mantiene una copia
 de respaldo `.bak` del guardado anterior.
 
 ## Estructura
@@ -63,6 +56,6 @@ src/test/java/com/mack/           pruebas unitarias (JUnit 5)
 ## Decisiones de diseño
 
 - **Repository:** el dominio solo conoce la interfaz `Repositorio`; `RepositorioJson` es un detalle intercambiable.
-- **Sin Singleton:** las dependencias se entregan en `Aplicacion` (más fácil de probar).
+- **Sin Singleton:** las dependencias se entregan en `Aplicacion` (para que probar sea mas facil).
 - **MVC:** la vista no tiene reglas de negocio; el controlador coordina vista y servicio.
 - **Contraseñas:** se guarda un resumen SHA-256 con sal, nunca la contraseña en claro.
